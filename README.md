@@ -3,4 +3,5 @@ Türkçe karakterlerde sorun olmayacak şekilde sıralama yapmak için yaptığ�
 turkish: '>=0.1.0' Kütüphanesini kullanarak yapıldı.
 
 
-![header image](https://raw.githubusercontent.com/eyupakky/flutterDataTableTurkishSort/master/ekrangoruntusu.jpeg | width=100)
+![](https://raw.githubusercontent.com/eyupakky/flutterDataTableTurkishSort/master/ekrangoruntusu.jpeg | width=100)
+src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
