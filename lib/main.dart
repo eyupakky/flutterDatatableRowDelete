@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   DataCell(
                     Text(name.lastName),
                     showEditIcon: false,
-                    placeholder: false,
+                    placeholder: true,
                   )
                 ],
               ),
