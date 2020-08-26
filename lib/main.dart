@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:turkish/turkish.dart';
 void main() {
@@ -74,23 +76,24 @@ class _MyHomePageState extends State<MyHomePage> {
             rows: names
                 .map(
                   (name) => DataRow(
-                cells: [
-                  DataCell(
-                    Text(name.firstName),
-                    showEditIcon: false,
-                    placeholder: false,
-                  ),
-                  DataCell(
-                    Text(name.lastName),
-                    showEditIcon: false,
-                    placeholder: true,
-                  )
-                ],
+                cells:dataRow(name)
               ),
             )
                 .toList()),
       ),
     );
+  }
+  List<DataCell> dataRow(Name name){
+    List<DataCell> list = List();
+    Map<String,dynamic> map = name.toJson();
+    map.forEach((key, value) {
+      list.add( DataCell(
+        Text(value),
+        showEditIcon: false,
+        placeholder: false,
+      ));
+    });
+    return list;
   }
 }
 class Name {
@@ -98,6 +101,12 @@ class Name {
   String lastName;
 
   Name({this.firstName, this.lastName});
+  Map<String,dynamic> toJson(){
+    return {
+      'firstName':firstName,
+      'lastName':lastName
+    };
+  }
 }
 var names = <Name>[
   Name(firstName: "Eyüp", lastName: "Akkaya"),
